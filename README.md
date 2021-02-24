@@ -1,1 +1,3 @@
-# algorithm
+# Algorithm
+
+algorithm note.
