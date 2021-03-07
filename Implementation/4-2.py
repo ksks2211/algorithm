@@ -1,12 +1,11 @@
-h = int(input())
+n = int(input())
 
-count = 0
+x=0
+if (n>=3): x=1
+elif (n>=13): x=2
+elif (n>=23): x=3
 
-for i in range(h+1):
-    for j in range(60):
-        for k in range(60):
-            if '3' in str(i)+str(j)+str(k): count+=1
+total = (n+1)*60*60
+impossible = (n-x+1)*45*45
 
-
-
-print(count)
+print(total-impossible)
