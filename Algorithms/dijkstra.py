@@ -17,12 +17,22 @@ def dijkstra(graph,start):
 
 
     while queue:
-        [d,i]=heapq.heappop(queue)
+        d, i = heapq.heappop(queue)
+
+        if dists[i] < d: continue
+
+
         # among i-node's neighbor nodes
-        for j in graph[i]:
-            _dist = graph[i][j]+d
+        # for j in graph[i]:
+        #     _dist = graph[i][j]+d
+        #     if dists[j] > _dist:
+        #         dists[j]= _dist
+        #         heapq.heappush(queue,[_dist,j])
+
+        for j, weight in graph[i].items():
+            _dist = weight+d
             if dists[j] > _dist:
-                dists[j]= _dist
+                dists[j] = _dist
                 heapq.heappush(queue,[_dist,j])
     print(dists)
 
