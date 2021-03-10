@@ -8,16 +8,14 @@ graph = {
     'E':{'F':1},
     'F':{'A':5}
 }
-# 각 노드에 대해서 출발노드로부터 최단거리 구하기
+# distance from each node
 def dijkstra(graph,start):
     queue = []
     dists = { node : float('inf') for node in graph}
-
-    #print(dists)
-    dists[start] = 0 # initial status
+    dists[start] = 0 # initial state
     heapq.heappush(queue,[dists[start], start])
 
-    #print(queue)
+
     while queue:
         [d,i]=heapq.heappop(queue)
         # among i-node's neighbor nodes
