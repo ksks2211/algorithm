@@ -1,7 +1,4 @@
-#recursive - stack
-
-
-
+#Iterative - stack
 n,m = map(int,input().split())
 
 visited = []
@@ -35,12 +32,13 @@ def bfs(x,y):
                 break
 
         if not stack : return  # end search
-
         # no unvisited neighbor. get back to earlier position.
         if notExist:
             (x,y) = stack.pop()
 
 count = 0
+
+
 
 for i in range(n):
     for j in range(m):
@@ -48,5 +46,9 @@ for i in range(n):
             count+=1
             bfs(i,j)
 
+
 print(count)
+
+
+
 
