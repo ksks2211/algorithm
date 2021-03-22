@@ -4,7 +4,16 @@ m = min(array)
 count = [0] * (max(array)-m+1)
 
 for idx in array:
-    count[idx]+=1
+    count[idx-m]+=1
+
+for i, v in enumerate(count):
+    k = i + m
+    for _ in range(v):
+        print(k,end=' ')
+
+
+
+
 #
 # for i in range(len(count)):
 #     k = i + m
@@ -12,8 +21,3 @@ for idx in array:
 #
 #         print(k,end=' ')
 #
-        
-for i, v in enumerate(count):
-    k = i + m
-    for _ in range(v):
-        print(k,end=' ')
