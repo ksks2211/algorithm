@@ -22,13 +22,6 @@ def dijkstra(graph_info, start):
 
         if dists[i] < d: continue
 
-        # among i-node's neighbor nodes
-        # for j in graph[i]:
-        #     _dist = graph[i][j]+d
-        #     if dists[j] > _dist:
-        #         dists[j]= _dist
-        #         heapq.heappush(queue,[_dist,j])
-
         for j, weight in graph_info[i].items():
             _dist = weight + d
             if dists[j] > _dist:
